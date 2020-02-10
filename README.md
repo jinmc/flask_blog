@@ -18,3 +18,9 @@ path = '/home/jimchong/deploy'
 if path not in sys.path:
     sys.path.append(path)
 from microblog import app as application
+
+# Installed Applications
+pip install flask-wtf (web forms)
+pip install flask-migrate (db)
+pip install flask-sqlalchemy (db)
+
