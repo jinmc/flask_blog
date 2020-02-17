@@ -25,3 +25,11 @@ pip install flask-wtf (web forms)<br>
 pip install flask-migrate (db)<br>
 pip install flask-sqlalchemy (db)<br>
 pip install flask-login 
+</p>
+
+Flask Shell Commands
+<ul>
+<li>flask db init</li>
+<li>flask db migrate -m "create table something"</li>
+<li>flask db upgrade</li>
+</ul>
