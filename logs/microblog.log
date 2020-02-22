@@ -1,4 +1,4 @@
-2020-02-21 00:26:44,922 ERROR: Exception on /index [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2020-02-22 18:19:50,147 ERROR: Exception on /explore [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 38, in index
-    return render_template('index.html', title='Home', form=form, user=user, posts=posts)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 46, in explore
+    return render_template('index.html', title='Explore', posts=posts)
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
@@ -28,13 +28,10 @@ Traceback (most recent call last):
     raise value.with_traceback(tb)
   File "/Users/jinmc/Developer/python/flaskBlog/app/templates/index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/base.html", line 30, in top-level template code
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/base.html", line 31, in top-level template code
     {% block content %}{% endblock %}
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/index.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/index.html", line 4, in block "content"
+    <h1>Hi, {{ user.username }}!</h1>
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 471, in getattr
     return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2020-02-21 00:26:50,995 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:40]
-2020-02-21 00:27:18,076 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:40]
-2020-02-21 00:28:57,348 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:40]
+jinja2.exceptions.UndefinedError: 'user' is undefined
