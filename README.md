@@ -24,7 +24,11 @@ from microblog import app as application
 pip install flask-wtf (web forms)<br>
 pip install flask-migrate (db)<br>
 pip install flask-sqlalchemy (db)<br>
-pip install flask-login 
+pip install flask-login <br>
+pip install flask-mail (email) <br>
+pip install pyjwt (json web token for secure token)<br>
+
+
 </p>
 
 Flask Shell Commands
@@ -32,4 +36,5 @@ Flask Shell Commands
 <li>flask db init</li>
 <li>flask db migrate -m "create table something"</li>
 <li>flask db upgrade</li>
+
 </ul>
