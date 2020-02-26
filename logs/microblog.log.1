@@ -1,4 +1,9 @@
-2020-02-24 00:47:36,333 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNTgyNTIzODMwLjU4ODM1NH0.l8SjwrSQJYMleupvZPDwHirTHa08SAB5tRcsIVJANW4 [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2020-02-24 01:09:27,289 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:42]
+2020-02-24 23:22:44,766 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-24 23:27:02,240 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-24 23:29:12,871 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-24 23:29:25,362 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-24 23:42:53,561 ERROR: Exception on /register [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +17,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 184, in reset_password
-    return render_template('reset_password.html', form=form)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 87, in register
+    return render_template('register.html', title='Register', form=form)
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
@@ -24,17 +29,15 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/reset_password.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/reset_password.html", line 8, in block "content"
-    {{ form.password.label }}<br>
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'app.forms.ResetPasswordRequestForm object' has no attribute 'password'
-2020-02-24 01:04:32,854 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:42]
-2020-02-24 01:04:50,436 ERROR: Exception on /reset_password_request [POST]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/register.html", line 2, in top-level template code
+    {% import 'bootstrap/stf.html' as wtf %}
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/stf.html
+2020-02-24 23:43:03,090 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-24 23:43:05,936 ERROR: Exception on /register [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -48,38 +51,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 166, in reset_password_request
-    send_password_reset_email(user)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/email.py", line 19, in send_password_reset_email
-    user=user, token=token))
-  File "/Users/jinmc/Developer/python/flaskBlog/app/email.py", line 9, in send_email
-    mail.send(msg)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask_mail.py", line 492, in send
-    message.send(connection)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask_mail.py", line 427, in send
-    connection.send(self)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask_mail.py", line 192, in send
-    message.rcpt_options)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 867, in sendmail
-    raise SMTPSenderRefused(code, resp, from_addr)
-smtplib.SMTPSenderRefused: (530, b'5.7.0 Authentication Required. Learn more at\n5.7.0  https://support.google.com/mail/?p=WantAuthError u2sm5683963qtd.72 - gsmtp', 'jinmoc5@gmail.com')
-2020-02-24 01:06:29,888 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:42]
-2020-02-24 01:06:53,465 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNTgyNTI1MDA1LjE5NjgzMX0.SeO9RykpKwVmKrlLdDu_hwoIg6kvzCr1wjRazX67UUw [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 184, in reset_password
-    return render_template('reset_password.html', form=form)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 87, in register
+    return render_template('register.html', title='Register', form=form)
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
@@ -90,17 +63,14 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/reset_password.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/reset_password.html", line 8, in block "content"
-    {{ form.password.label }}<br>
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'app.forms.ResetPasswordRequestForm object' has no attribute 'password'
-2020-02-24 01:08:23,095 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:42]
-2020-02-24 01:09:00,361 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNTgyNTI1MTIzLjk1NDU3MzJ9.zhHr2Y7PRpnKPmkp0ZsFpZhB_48YmkgIDOOgxxf4MSE [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/register.html", line 2, in top-level template code
+    {% import 'bootstrap/stf.html' as wtf %}
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/stf.html
+2020-02-24 23:43:29,255 ERROR: Exception on /register [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -114,6 +84,34 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 178, in reset_password
-    form = ResetPasswordForm()
-NameError: name 'ResetPasswordForm' is not defined
+  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 87, in register
+    return render_template('register.html', title='Register', form=form)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/register.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/stf.html
+2020-02-24 23:43:33,828 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 07:53:30,143 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 07:53:44,126 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 20:55:25,863 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 20:57:40,649 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 20:58:17,167 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 20:58:53,190 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 21:03:44,150 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 21:04:45,715 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 21:06:08,914 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 21:14:37,005 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+2020-02-25 21:19:40,876 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]

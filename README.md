@@ -27,7 +27,7 @@ pip install flask-sqlalchemy (db)<br>
 pip install flask-login <br>
 pip install flask-mail (email) <br>
 pip install pyjwt (json web token for secure token)<br>
-
+pip install flask-bootstrap (css)<br>
 
 </p>
 
