@@ -28,7 +28,7 @@ pip install flask-login <br>
 pip install flask-mail (email) <br>
 pip install pyjwt (json web token for secure token)<br>
 pip install flask-bootstrap (css)<br>
-
+pip install flask-moment (date and time js library) <br>
 </p>
 
 Flask Shell Commands
