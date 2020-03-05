@@ -1,10 +1,108 @@
-2020-02-25 21:20:16,190 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:20:44,320 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:21:44,626 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:22:13,415 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:22:33,392 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:26:29,145 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-03-01 14:21:22,883 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-03-01 14:40:46,230 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:46]
-2020-03-01 14:44:51,085 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:46]
-2020-03-01 14:47:19,625 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:46]
+2020-03-05 14:35:04,328 ERROR: Exception on /favicon.ico [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1925, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1907, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1743, in handle_http_exception
+    return handler(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/404.html", line 4, in template
+    <h1>{{ _(File Not Found) }}</h1>
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'Not'
+2020-03-05 14:35:08,550 ERROR: Exception on /favicon.ico [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1925, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1907, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1743, in handle_http_exception
+    return handler(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/404.html", line 4, in template
+    <h1>{{ _(File Not Found) }}</h1>
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'Not'
+2020-03-05 14:36:25,395 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 14:37:22,411 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 14:40:08,279 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 14:41:45,554 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:09:35,106 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:09:54,502 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:10:37,101 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:15:52,321 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:17:17,303 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:18:16,039 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:18:38,937 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:18:45,102 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:22:17,575 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:22:33,482 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:22:48,915 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:25:59,549 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]

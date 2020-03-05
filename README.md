@@ -29,6 +29,7 @@ pip install flask-mail (email) <br>
 pip install pyjwt (json web token for secure token)<br>
 pip install flask-bootstrap (css)<br>
 pip install flask-moment (date and time js library) <br>
+pip install flask-babel (i18n and L10n) <br>
 </p>
 
 Flask Shell Commands
@@ -36,5 +37,11 @@ Flask Shell Commands
 <li>flask db init</li>
 <li>flask db migrate -m "create table something"</li>
 <li>flask db upgrade</li>
-
+</ul>
+Flask translate Commands
+<ul>
+<li>flask translate --help</li>
+<li>flask translate init [language] - language should be 2 character abbreviate after this, update the messages.po file</li>
+<li>flask translate compile - compile the transalation</li>
+<li>flask translate update - apply translation</li>
 </ul>

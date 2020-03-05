@@ -1,117 +1,92 @@
-2020-02-24 01:09:27,289 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:42]
-2020-02-24 23:22:44,766 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-24 23:27:02,240 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-24 23:29:12,871 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-24 23:29:25,362 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-24 23:42:53,561 ERROR: Exception on /register [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2020-03-05 14:31:11,876 ERROR: Exception on /favicon.ico [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1925, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1907, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 87, in register
-    return render_template('register.html', title='Register', form=form)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1743, in handle_http_exception
+    return handler(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/register.html", line 2, in top-level template code
-    {% import 'bootstrap/stf.html' as wtf %}
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/stf.html
-2020-02-24 23:43:03,090 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-24 23:43:05,936 ERROR: Exception on /register [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/404.html", line 4, in template
+    <h1>{{ _(File Not Found) }}</h1>
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'Not'
+2020-03-05 14:31:12,763 ERROR: Exception on /favicon.ico [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1925, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1907, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 87, in register
-    return render_template('register.html', title='Register', form=form)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1743, in handle_http_exception
+    return handler(e)
+  File "/Users/jinmc/Developer/python/flaskBlog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/register.html", line 2, in top-level template code
-    {% import 'bootstrap/stf.html' as wtf %}
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/stf.html
-2020-02-24 23:43:29,255 ERROR: Exception on /register [GET]: [in /Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/routes.py", line 87, in register
-    return render_template('register.html', title='Register', form=form)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/register.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/Users/jinmc/Developer/python/flaskBlog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/stf.html
-2020-02-24 23:43:33,828 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 07:53:30,143 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 07:53:44,126 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 20:55:25,863 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 20:57:40,649 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 20:58:17,167 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 20:58:53,190 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:03:44,150 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:04:45,715 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:06:08,914 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:14:37,005 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
-2020-02-25 21:19:40,876 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:44]
+  File "/Users/jinmc/Developer/python/flaskBlog/app/templates/404.html", line 4, in template
+    <h1>{{ _(File Not Found) }}</h1>
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'Not'
