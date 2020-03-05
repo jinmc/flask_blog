@@ -106,3 +106,7 @@ jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'Not'
 2020-03-05 15:22:33,482 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
 2020-03-05 15:22:48,915 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
 2020-03-05 15:25:59,549 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:30:05,785 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:30:37,097 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:30:53,905 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
+2020-03-05 15:31:22,546 INFO: Microblog startup: [in /Users/jinmc/Developer/python/flaskBlog/app/__init__.py:59]
